@@ -13,38 +13,21 @@ function App() {
 }
 
 function Count({setCount}){
-  return (
-    <div>
-      <CountRenderer />
-      <Buttons setCount={setCount}/>
-    </div>
-  )
-}
+  return (  <div>
+              <CountRenderer />
+              <Buttons setCount={setCount}/>
+            </div>
+  )}
 
 function CountRenderer(){
   const count = useContext(CountContext)
-  return (
-    <div>
-      {count}
-    </div>
-  )
-}
+  return (    <div> {count} </div>  )}
 
 function Buttons({setCount}){
   const count = useContext(CountContext)
-  return(
-    <div>
-      <button onClick={()=>{
-        setCount(count+1)
-      }}>
-        Count +
-      </button>
-      <button onClick={()=> {
-        setCount(count-1)
-      }}>
-        Count -
-      </button>
-    </div>
-  )
-}
+  return(  <div>
+              <button onClick={()=>{ setCount(count+1) }}> Count + </button>
+              <button onClick={()=> { setCount(count-1)}}> Count - </button>
+          </div>
+  )}
 export default App
